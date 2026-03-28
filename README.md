@@ -84,7 +84,6 @@ All tests mock the Groq API to avoid rate limits and ensure reproducibility.
 | POST | `/validate` | Validation only | Envelope + validation_results |
 | POST | `/match` | LLM matching only | Envelope + matching_results |
 | POST | `/process` | Full pipeline | Envelope + all enrichments |
-| GET | `/health` | Health check | `{"status": "ok", ...}` |
 
 ### Environment Setup
 
