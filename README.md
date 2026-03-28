@@ -89,7 +89,7 @@ All tests mock the Groq API to avoid rate limits and ensure reproducibility.
 
 - **Python**: 3.11+
 - **Dependencies**: FastAPI, Uvicorn, Pydantic v2, Groq SDK, pytest-asyncio
-- **LLM**: Groq API (free tier, llama-3.3-70b-versatile model)
+- **LLM**: Groq API (free tier, llama-3.3-70b-versatile model,can also use local llm via ollama)
 - **Required**: Set `GROQ_API_KEY` in `.env`
 
 ### Known Limitations
@@ -107,12 +107,3 @@ pytest -v --tb=short      # Shorter traceback format
 ```
 
 All 6 tests should pass with mocked LLM calls (no actual API usage during tests).
-
-## Deployment Considerations
-
-- Add API key rotation and secret management (AWS Secrets Manager, HashiCorp Vault)
-- Implement request id/correlation tracing across services
-- Add structured JSON logging for log aggregation (ELK, CloudWatch)
-- Rate limit LLM calls to avoid quota exhaustion
-- Cache commodity catalog in Redis for high-throughput scenarios
-- Monitor LLM response times and graceful degradation triggers
